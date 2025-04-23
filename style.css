@@ -1,0 +1,59 @@
+/*
+    Screen palette: 
+    A1CCA5 - background
+    8FB996 - aux
+    709775 - off-segment
+    415D43 - aux
+    111D13 - on-segment
+*/
+@property --screen-background {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #a1cca5;
+  }
+
+@property --screen-text-off {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #709775; 
+}
+
+@property --screen-text-on {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #111D13; 
+}
+
+#screen{
+    display: flex;
+    justify-content: flex-end;
+    padding-inline-start:2vmax;
+    padding-inline-end: 2vmax;
+    background-color: var(--screen-background);
+    border-color: black;
+    border-style: groove;
+    border-width: 2px;
+    border-radius: 10px;
+}
+
+#screen-text{
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--screen-background);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: x-large;
+}
+
+#active-screen-text{
+    background-color: var(--screen-background);
+    color: var(--screen-text-on);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: x-large;
+}
+
+#inactive-screen-text{
+    background-color: var(--screen-background);
+    color: var(--screen-text-off);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: x-large;
+}
